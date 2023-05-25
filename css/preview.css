@@ -1,0 +1,480 @@
+/* Variables */
+:root {
+    /* للنصوص */
+    --text: #FFFFFF;
+
+    /* للعناوين و الاقسام */
+    --main-title-1: #ffffff;
+    /* للبوكس والنفقيشن */
+    --box: #2C2C31;
+    /* لخلفيات كل مجوعة بوكسات */
+    --back-sect: #1f1f22;
+
+    --red: #FF1414;
+    /* الوان البكس شادو */
+    --box-sadow-color: #ffffff;
+    --box-sadow-color-rgb: 250 250 250;
+    /* مدة الانتقال */
+    --main-transition: 0.3s;
+}
+.light{
+    --main-title-1: #1f1f22;
+    --back-sect: #DFDFDF;
+    --box-sadow-color: #000000;
+    --box-sadow-color-rgb: 0 0 0;
+}
+/*ُEnd Variables */
+/* Start Global Rules  */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    display: flex;
+}
+a {
+    text-decoration: none;
+    color: var(--main-title-1);
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* End Global Rules  */
+
+/* Start Nav Bar */
+.navBar{
+    font-family: 'CENTURION';
+    letter-spacing: 1px;
+    background-color: var(--back-sect);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0px 25px 44px;
+    width: 16%;
+    height: 100%;
+    position: fixed;
+    color: var(--main-title-1);
+}
+.navBar .userInfo{
+    display: flex;
+    align-items: baseline;
+}
+.navBar .userInfo img{
+    width: 65px;
+    border-radius: 50%;
+    position: relative;
+}
+.navBar .userInfo .userImg{
+    position: relative;
+}
+.navBar .userInfo .userImg::after{
+    content: "";
+    position: absolute;
+    background-color: #f3de26;
+    bottom: 6%;
+    right: -1%;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid var(--back-sect);
+}
+
+.navBar .userInfo h2{
+    padding-left: 5px;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 400;
+}
+.navBar .pageLink{
+    border-bottom: 1px solid var(--red);
+    border-top: 1px solid var(--red);
+    padding: 50px 0px;
+}
+.navBar .pageLink a,
+.navBar .setting a{
+    display: flex;
+    align-items: center;
+    color: var(--main-title-1);
+    margin-bottom: 15px;
+}
+.navBar .pageLink a svg,
+.navBar .setting a svg{
+    font-size: 20px;
+    margin-bottom: -8px;
+}
+.navBar .pageLink a h2,
+.navBar .setting a h2{
+    font-weight: 300;
+    margin-left: 15px;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+.navBar .pageLink .active,
+.navBar .pageLink a:hover,
+.navBar .setting a:hover{
+    box-shadow: 18px 0px 29px -24px var(--box-sadow-color) inset;
+    border-left: 4px solid var(--red);
+    color: var(--red);
+    padding: 0 0 5px 10px;
+    margin-left: 10px;
+}
+.navBar .pageLink .active h2{
+    font-weight: 900;
+}
+/* End Nav Bar */
+
+/* Start right-section  */
+.right-section {
+    /* المسافه الباقيه في الصفحة بعد ما اخذنا حق النقيشن بار */
+    width: 84%;
+    height: 100%;
+    /* عشان ميكون ورا الناف برا بسبب 
+    ان الناف بار خذ بوزيشن فيكسد في دفينها بنفس حجم الناف بار */
+    margin-left: 16%;
+    position: relative;
+
+}
+/* Start right-section  */
+.right-section {
+    /* المسافه الباقيه في الصفحة بعد ما اخذنا حق النقيشن بار */
+    width: 84%;
+    height: 100%;
+    /* عشان ميكون ورا الناف برا بسبب 
+    ان الناف بار خذ بوزيشن فيكسد في دفينها بنفس حجم الناف بار */
+    margin-left: 16%;
+    position: relative;
+}
+/* start header  */
+.right-section .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 44px 25px 430px;
+    background-color: var(--back-sect);
+    position: fixed;
+    z-index: 1000;
+    /* المسافه الباقيه في الصفحة بعد ما اخذنا حق النقيشن بار */
+    width: 84%;
+}
+/* عشان نعمل شريط احمر فوق المين سكشن */
+.right-section .header::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: calc(100% - 29px);
+    height: 10px;
+    background-color: var(--red);
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: -6px -5px 20px rgb(var(--box-sadow-color-rgb) / 29%);
+}
+.right-section .header .search{
+    padding: 10px;
+    color: #ffffff;
+    background-color: var(--box);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.right-section .header .search :is(input, button){
+    color: inherit;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.right-section .header .search input{
+    color: #ffffff;
+    font-size: 20px;
+    width: 250px;
+}
+
+.right-section .header .search .search-btn{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.right-section .header .search .search-btn:first-child{
+    margin-right: 10px;
+}
+.right-section .header .logo {
+    display: flex;
+    align-items: end;
+    font-family: "Anurati";
+    height: 64px;
+    padding-bottom: 5px;
+}
+.right-section .header .logo img{
+    max-width: 55px;
+    max-height: 55px;
+}
+.right-section .header .logo h2{
+    font-size: 17px;
+    margin: 0 0 0 -1px;
+    color: var(--main-title-1);
+}
+.right-section .header .logo h2 span {
+    color: var(--red);
+    font-family: "Anurati";
+}
+/* End header  */
+
+/* Start main-section */
+.main-section {
+    background-image: url(../imgs/Background.jpg);
+    position: relative;
+    /* عشان ميكون جزى منه ورا الهيدير بسبب 
+    ان هدر خذ بوزيشن فيكسد ف زلناه بنفس حجم الناف بار */
+    margin-top: 110px;
+    /* نفس اللي فوق بس هنا بسبب البيفور */
+    margin-right: 40px;
+    color: var(--text);
+    padding: 30px 20px 10px 30px;
+}
+.light-section {
+    background-image: none;
+    background-color: #ffffff;
+    position: relative;
+    /* عشان ميكون جزى منه ورا الهيدير بسبب 
+    ان هدر خذ بوزيشن فيكسد ف زلناه بنفس حجم الناف بار */
+    margin-top: 110px;
+    /* نفس اللي فوق بس هنا بسبب البيفور */
+    margin-right: 40px;
+    color: var(--text);
+    padding: 30px 20px 10px 30px;
+}
+.main-section::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--back-sect);
+    box-shadow: inset -20px -14px 20px -30px var(--box-sadow-color);
+}
+/* سويته عشان اخلي لون رمادي صغير يمين القسم  */
+.main-section::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    background-color: var(--back-sect);
+    right: -40px;
+    top: 0;
+    box-shadow: inset 20px -19px 20px -31px var(--box-sadow-color);
+}
+/* End main-section */
+
+/* S boxes */
+.videos .holder{
+    background-color: var(--section-background);
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
+.videos .holder .list{
+    background-color: var(--box);
+    min-width: 300px;
+}
+.videos .holder .list .name{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: var(--back-sect);
+    color: var(--red);
+    font-size: 25px;
+}
+.videos .holder .list ul li{
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 20px;
+    transition: var(--main-transition);
+    color: var(--text);
+}
+.videos .holder .list ul .selected{
+    background-color: var(--back-sect);
+    color: var(--red);
+}
+.videos .holder .list ul .selected span {
+    color: var(--red);
+
+}
+.videos .holder .list ul li span{
+    display: block;
+    margin-top: 10px;
+    color: #777;
+    font-size: 15px;
+    transition: var(--main-transition);
+}
+.videos .holder .list ul li:not(.selected):hover,
+.videos .holder .list ul li:not(.selected):hover span {
+    color: var(--red);
+    background-color: var(--back-sect);
+}
+.videos .holder .preview{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 10px;
+    background-color: var(--back-sect);
+}
+.videos .holder .preview .img {
+    max-width: 100%;
+}
+.videos .holder .preview .info {
+    background-color: var(--box);
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.videos .holder .preview .info .name{ 
+    font-weight: 300;
+    font-size: 25px;}
+/* E container and boxes */
+
+/* footer */
+.footer {
+    display: flex;
+    padding: 40px;
+    border-top: 1px solid var(--main-title-1);
+    justify-content: space-around;
+    gap: 0 40px;
+    margin-top: 150px;
+}
+.footer>div{
+    width: 300px;
+}
+.footer>div h2{
+    font-size: 20px;
+    color: var(--red);
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--red);
+    font-family: 'CENTURION';
+}
+.footer>div .text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--main-title-1);
+}
+.footer>div .text p {
+    font-size: 12px;
+}
+.footer .follow-us .text svg{
+    font-size: 35px;
+    margin: 20px
+}
+
+/* E footer */
+/* End right-section */
+
+/* <!-- S toggle mode --> */
+.toggle-mode{
+    width: 70px;
+    height: 35px;
+    border: 0.1px solid #ffffff;
+    border-radius: 100px;
+    background-color: #a7aaaf;
+    box-shadow: inset 10px 10px 15px #a7aaaf, inset -10px -10px 15px #ffffff;
+    position: fixed;
+    top: 82%;
+    left: 3%;
+    z-index: 200000;
+}
+.toggle-mode .icon{
+    width: 28px;
+    height: 28px;
+    margin: 10px;
+    border-radius: 100px;
+    box-shadow: inset 0px 0px 3px #f0edf1, 4px 4px 7px #a7aaaf, -4px -4px 7px #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    margin: 4px;
+}
+.toggle-mode .sun{
+    opacity: 0;
+}
+.toggle-mode input {
+    opacity: 0;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+}
+.toggle-mode input:checked + label .sun{
+    opacity: 1;
+}
+.toggle-mode input:checked + label .moon{
+    opacity: 0;
+}
+.toggle-mode input:checked + label .icon {
+    transform: translateX(34px);
+}
+/* <!-- E toggle mode --> */
+
+
+/*بداية تنسيقات الانتقالات */
+*{
+    transition: var(--main-transition);
+    caret-color: var(--red);
+}
+svg:hover,
+a:hover,
+.play-btn:hover,
+.fav-btn:hover,
+.boxs:hover,
+span:hover
+{
+    transform: scale(1.1);
+}
+.fav-btn:hover,
+svg:hover{
+    cursor: pointer;
+}
+/* تغير االون لما تحدد نص */
+::selection {
+    background-color: var(--red);
+}
+
+::placeholder {
+    text-align: center;
+}
+/*نهاية تنسيقات الانتقالات */
+
+/*بداية تنسيقات شريط scroll */
+/* للتحكم في عرض السكرول */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* للتحكم في لون خلفية السكرول */
+::-webkit-scrollbar-track{
+    background-color: #1f1f22e6;
+    /* box-shadow: ; */
+}
+/* الهاندل او القطه اللي بتتحرك */
+::-webkit-scrollbar-thumb{
+    background-color: rgb(255 20 20 / 41%);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(255 20 20 / 70%)
+}
+/*نهاية تنسيقات شريط scroll */
